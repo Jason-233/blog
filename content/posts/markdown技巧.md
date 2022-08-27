@@ -4,7 +4,7 @@ subtitle: "实在是不熟练的MD操作"
 description: 第X篇博文
 date: 2021-07-31T21:48:32+08:00
 toc: true
-draft: true #是否为草稿，false则不是草稿、会发布
+draft: false #是否为草稿，false则不是草稿、会发布
 slug: md-technique     #文章别名，用来做永久链接，下方会详细说明
 ---
 ## 一些写作心得？
