@@ -8,5 +8,6 @@ toc: true
 draft: false #是否为草稿，false则不是草稿、会发布
 slug: hello-world     #文章别名，用来做永久链接，下方会详细说明
 ---
-
 # Hello world!
+
+![1661698492810](pic/hello-world/1661698492810.png)
