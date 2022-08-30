@@ -99,17 +99,17 @@ echo 'test'
 | 单元格 | 单元格 |
 | 单元格 | 单元格 |
 
-![pic1 pic](pic/md-tek/Snipaste_2022-08-16office.png "插入第一张图，第一次相对路径输入对了还调了好一会才出来……")
+![pic1 pic](image/markdown技巧_1661827887080.png "插入第一张图，第一次相对路径输入对了还调了好一会才出来……")
 经比较，能看到比实际截的图要大大概1/4……
 
-\!\[pic1 pic](../pic/Snipaste_2022-08-16office.png "插入第一张图，第一次相对路径输入对了还调了好一会才出来……")
+\!\[pic1 pic](image/markdown技巧_1661827887080.png "插入第一张图，第一次相对路径输入对了还调了好一会才出来……")
 
 | 左对齐 | 右对齐 | 居中对齐 |
 | :----- | -----: | :------: |
 | 单元格 | 单元格 |  单元格  |
 | 单元格 | 单元格 |  单元格  |
 
-![pic2 pic](pic/md-tek/Snipaste_2022-08-28_21-44-08.png "本地显示图片有点慢呐，等上传了再看看，下面的网图倒是挺快的")
+![pic2 pic](image/markdown技巧_1661827956797.png "本地显示图片有点慢呐，等上传了再看看，下面的网图倒是挺快的")
 
 图片的一起写了吧
 
@@ -117,7 +117,7 @@ echo 'test'
 
 > Markdown 还没有办法指定图片的高度与宽度，如果你需要的话，你可以使用普通的 \<img> 标签
 > \<img src="http://static.runoob.com/images/runoob-logo.png" width="50%">
-
+<img src="http://static.runoob.com/images/runoob-logo.png" width="50%">
 > hugo官方文档的：不太懂怎么搞的，回头有空看看（主要感觉能用一个就行了
 > {{ $image := resources.Get "images/screenshot.png" }}
 

@@ -1,7 +1,7 @@
 ##########################################
 # 站点配置
 
-baseURL = "https://maniac.github.io/"
+baseURL = "https://maniac.netlify.app/"
 title = "MANIAC'S BLOG"
 languageCode = "zh-CN"
 hasCJKLanguage = true
@@ -31,13 +31,13 @@ enableEmoji = false
 footnoteReturnLinkContents = "↩"
 
 # 是否启用 Git 版本信息
-enableGitInfo = false
+enableGitInfo = true
 
 # 是否生成 robots.txt 文件
 enableRobotsTXT = true
 
 # 每一分页的文章数（仅对「文章摘要」首页布局有效）
-paginate = 5
+paginate = 10
 
 # URL 相关
 disablePathToLower = false
@@ -51,11 +51,12 @@ uglyURLs = false
 
 # 类别
 [taxonomies]
-    category = "categories"
+    category = ""
     tag = "tags"
 
 # 修改时间
 [frontmatter]
+    date = ['date', 'publishDate', 'lastmod',':default']
     lastmod = ["lastmod", ":git", ":fileModTime", ":default"]
 
 # Markdown 渲染器
@@ -189,36 +190,42 @@ uglyURLs = false
 
 [menu]
     ## 菜单栏
-    # [[menu.main]]
-    #     pageref = "/"
-    #     name = "首页"
-    #     weight = 1
-    #     pre = "internal"
-    #     post = "home"
+    [[menu.main]]
+        pageref = "/"
+        name = "首页"
+        weight = 1
+        pre = "internal"
+        post = "home"
     [[menu.main]]
         pageref = "/posts/"
         name = "文章"
         weight = 2
         pre = "internal"
-        post = "archive"
-    [[menu.main]]
-        pageref = "/categories/"
-        name = "分类"
-        weight = 3
-        pre = "internal"
         post = "th"
+    # [[menu.main]]
+    #     pageref = "/categories/"
+    #     name = "分类"
+    #     weight = 3
+    #     pre = "internal"
+    #     post = "th"
+    # [[menu.main]]
+    #     pageref = "/tags/"
+    #     name = "标签"
+    #     weight = 4
+    #     pre = "internal"
+    #     post = "tags"
+    # [[menu.main]]
+    #     url = "/archives/"
+    #     name = "归档"
+    #     weight = 5
+    #     pre = "internal"
+    #     post = "archive"
     [[menu.main]]
-        pageref = "/tags/"
-        name = "标签"
-        weight = 4
-        pre = "internal"
-        post = "tags"
-    [[menu.main]]
-        url = "/archives/"
-        name = "归档"
+        url = "/tutorials/"
+        name = "教程"
         weight = 5
         pre = "internal"
-        post = "archive"
+        post = "edit"
     [[menu.main]]
         pageref = "/about/"
         name = "关于"
@@ -315,11 +322,11 @@ uglyURLs = false
     # 3. posts     文章摘要
     # 4. page      普通页面
 
-    homeLayout = "posts"
+    homeLayout = "poetry"
 
     ## 「诗意人生」
     # 诗句，支持 Markdown
-    homePoetry = []
+    homePoetry = ["# Tomorrow   ","# is    ","# another day"]
     # 底部链接的内间距，单位：em
     homeLinksPadding = 1
 
@@ -374,7 +381,7 @@ uglyURLs = false
     # 的树状分类，故如需保留树状分类，建议适应
     # Hugo 的设计理念——分区。
 
-    categoryBy = "categories"
+    categoryBy = "sections"
     # 注意：如果你设置为 `sections`，请务必将
     #      此配置文件中的类别（taxonomies）中
     #      的 `categories` 删除，不然分类页
@@ -1078,10 +1085,10 @@ uglyURLs = false
     # 文章的 Git 版本信息
 
     # 是否开启
-    enablePostGitInfo = false
+    enablePostGitInfo = true
 
     # 是否显示（全局设置）
-    displayPostGitInfo = false
+    displayPostGitInfo = true
     # 说明：文章的 Front Matter 中的 `gitinfo`
     #      的优先级高于此处
 
