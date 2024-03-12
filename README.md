@@ -1,1 +1,1 @@
-#maniac
+My personal blog
