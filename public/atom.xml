@@ -1,0 +1,695 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="zh-CN">
+    <title type="text">JASON&#39;S BLOG</title>
+    <subtitle type="html">MemE 是一个强大且可高度定制的 GoHugo 博客主题，专为个人博客设计。</subtitle>
+    <updated>2024-03-21T14:58:33&#43;08:00</updated>
+    <id>http://localhost:1313/</id>
+    <link rel="alternate" type="text/html" href="http://localhost:1313/" />
+    <link rel="self" type="application/atom&#43;xml" href="http://localhost:1313/atom.xml" />
+    <author>
+            <name>Jason</name>
+            <uri>http://localhost:1313/</uri>
+            
+                <email>jasonxu5120@outlook.com</email>
+            </author>
+    <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights>
+    <generator uri="https://gohugo.io/" version="0.123.7">Hugo</generator>
+        <entry>
+            <title type="text">汉王N510刷入OpenInkpot系统</title>
+            <link rel="alternate" type="text/html" href="http://localhost:1313/tutorials/hanvon-n510/" />
+            <id>http://localhost:1313/tutorials/hanvon-n510/</id>
+            <updated>2024-03-21T14:54:16&#43;08:00</updated>
+            <published>2024-03-21T13:47:40&#43;08:00</published>
+            <author>
+                    <name>Jason</name>
+                    <uri>https://maniac.netlify.app/</uri>
+                    <email>jasonxu5120@outlook.com</email>
+                    </author>
+            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">汉王N510刷入OpenInkpot系统 心血来潮 几年前在咸鱼60块吧，收了个n510，试试电纸书。果然后来大部分时间是在吃灰，不过也有原生系统挺拉的缘故。后来也闲着想把这个屏幕拆开来玩玩，百度上搜了下……</summary>
+            
+                <content type="html">&lt;h1 id=&#34;汉王n510刷入openinkpot系统&#34;&gt;汉王N510刷入OpenInkpot系统&lt;/h1&gt;
+&lt;h1 id=&#34;心血来潮&#34;&gt;心血来潮&lt;/h1&gt;
+&lt;p&gt;几年前在咸鱼60块吧，收了个n510，试试电纸书。果然后来大部分时间是在吃灰，不过也有原生系统挺拉的缘故。后来也闲着想把这个屏幕拆开来玩玩，百度上搜了下，没找到什么好的中文资料，就摆了。这几天也是一时在bing上随手一搜，就找到了https://luojia.me/5479/](&lt;a href=&#34;https://luojia.me/5479/&#34;&gt;https://luojia.me/5479/&lt;/a&gt;) 这个大佬的拆机贴，一看原来还有这第三方OI系统。果断决定刷个机玩玩，结果就连踩好几个坑……&lt;/p&gt;
+&lt;h1 id=&#34;刷机步骤&#34;&gt;刷机步骤&lt;/h1&gt;
+&lt;h2 id=&#34;查找资料&#34;&gt;查找资料&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;其实说起来也很简单，跟着现成的教程来就完了，但是，找资料，复现老环境也花了不少功夫。24年了，这台08年的设备在国内互联网上的水花基本没多少了，汉王官网上都没有什么踪影了。这也让我有点感觉物是人非。好在OI后面还有个存档下载站，还有webarchive保存的12年的部分OI原官方网站。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;一开始看部分资料是N510和516部分可以通刷，先是纠结了N510和516有什么区别，我看了下516可能支持音频播放和录音，其他的基本一样。后面看上面的博主展示的图，发现跟手上的机子一模一样，于是放心继续刷了。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;基本上从&lt;/strong&gt;&lt;a href=&#34;https://web.archive.org/web/20131206122859/http://openinkpot.org/wiki&#34;&gt;OpenInkpot (archive.org)&lt;/a&gt; 这里找就可以了，&lt;a href=&#34;https://openinkpot.org/pub/&#34;&gt;Index of /pub/ (openinkpot.org)&lt;/a&gt; 就是仅存的存档下载站了。&lt;/p&gt;
+&lt;h2 id=&#34;刷驱动&#34;&gt;刷驱动&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;后面就是为Jz4740-USB-Boot-Device刷驱动，这块连踩几个坑。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;驱动安装所需INF和SYS文件都包含在&lt;/strong&gt;&lt;a href=&#34;https://openinkpot.org/pub/contrib/n516-usbboot/azbooka-usbboot-new.tar.gz&#34;&gt;https://openinkpot.org/pub/contrib/n516-usbboot/azbooka-usbboot-new.tar.gz&lt;/a&gt; ，应该说有USB_Boot.exe的都有。一开始接触还不知道INF怎么装，实际上右键就有安装选项。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;接下来就是win10这么些年更新的强制驱动安装数字签名，我按网上各种临时禁用的方法（其实也就看到两种）试了，再来提示成功。可是设备管理器还是找不到驱动。我又手动添加，跳出来个只支持64位驱动安装提示。我不死心还试了几次，果不其然失败了。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;我重新看了遍安装包内的readme：Usb_Boot_Driver.sys: the driver file used for Windows 2000/XP/Vista。好么，这么老的系统才行。我还犹记得之前win11更新，有人用骚操作成功调制解调器连上网，也是为了兼容性吧，可轮到我正好被抛下。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;那就装个XP的虚拟机来刷机，也不是什么大不了的。网上一搜镜像，不用迅雷下电驴的纯净包（MSDN I TELL YOU），其他的都是ghost，我寻思就刷个机用用，谁下的快用谁呗。不过第三方实在有点没眼看，还是下了纯净版（实际上是熬夜到昏头了，忘了搜下ghost转换iso）。从之前安装的禁用恶意软件证书阻止了迅雷的安装，到100k/s的百毒云，到偷懒API下载卡在99%不动的阿里云，最后还是登录阿里转存客户端下载。几分钟后终于开始装XP。后面都很顺畅了，照着几个教程，轻松搞定。这时候有点修仙脑抽了。想起酷安老哥的告诫，不要在晚上刷机……&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;安装完XP，直接顺手把vmtool装了，把上面解压出的文件夹拖到XP虚拟机。右键安装INF，连接设备（先关机，再按住横屏键和电源键3秒等灯微亮），成功识别。后面就是照猫画虎地敲命令，进行初次的刷机。&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&#34;刷机&#34;&gt;刷机&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;这里要下载&lt;/strong&gt; &lt;code&gt;flashimage&lt;/code&gt;的包，解压后在 &lt;code&gt;n516-usbboot&lt;/code&gt;文件夹里运行 &lt;code&gt;USB_Boot.exe&lt;/code&gt;。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;机翻readme步骤：&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;1.通过USB连接设备。&lt;/strong&gt;
+&lt;strong&gt;2.按着“旋转”按钮，打开设备电源。&lt;/strong&gt;
+&lt;strong&gt;3.新设备将出现在您的系统中，找驱动程序指向此目录。&lt;/strong&gt;
+**4.运行USB Boot.exe **
+&lt;strong&gt;5.在USBboot shell中执行命令:&lt;/strong&gt;
+**	**&amp;gt; boot 0 **
+**	&lt;strong&gt;&amp;gt; fconfig USBboot.cfg 0&lt;/strong&gt;
+**	&lt;strong&gt;如果一切正常，将出现以下提示信息:&lt;/strong&gt;
+**USBboot:&amp;gt; boot 0&lt;/p&gt;
+&lt;p&gt;** Booting No.0 device......UnBooted.....Boot success!**
+** Initing No.0 device......Init Configration success!**
+** USBBoot :&amp;gt; fconfig USBboot.cfg 0**&lt;/p&gt;
+&lt;p&gt;** Configing No.0 device....**
+** Init Configration success!**
+** USBBoot :&amp;gt;**&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;6.执行下一步命令:&lt;/strong&gt;
+**	**&amp;gt; nerase 0 4096 0 0 **
+**	&lt;strong&gt;&amp;gt; nprog 0 n516-image.bin 0 0 -n&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;7.当刷机完成时，复位设备（戳背后RESET小孔）。它应该启动到新的固件。如果刷机是成功的，屏幕应该闪烁几次，引导将显示。&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;刷机中如下图：&lt;/p&gt;
+&lt;img src=&#34;IMG_20240122_052332.jpg&#34; style=&#34;zoom:25%;&#34; /&gt;
+&lt;img src=&#34;IMG_20240122_111931.jpg&#34; style=&#34;zoom:25%;&#34; /&gt;
+&lt;p&gt;&lt;strong&gt;后面要更新什么的，直接把&lt;/strong&gt; &lt;code&gt;update&lt;/code&gt;、&lt;code&gt;reinstall&lt;/code&gt;包解压出的oifw文件放在sd卡根目录下重新开次机即可。如果中间变砖了，重头按初次刷机来应该就行。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;IMG_20240122_052624.jpg&#34; style=&#34;zoom:15%;&#34; /&gt;&lt;img src=&#34;IMG_20240122_112026.jpg&#34; style=&#34;zoom:15%;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;这边有两款系统azbooka和单纯的OI。前者UI感觉上更加美观，不过只有英俄乌三语可选。后者则多达十几种，不过也导致了后面出现中文字体缺字的问题，某个bug导致的中文字符集无法被正确导入，只能使用日文字符集。打开中文文本更是连片框框。&lt;/strong&gt;&lt;img src=&#34;IMG_20240122_112652.jpg&#34; style=&#34;zoom:15%;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;好在这个问题可以通过在SD卡根目录下创建.fonts文件夹，放入自己下载的中文字体来解决（这样，在开机后会白屏半小时以上，应该是在读取字体吧）。然后就可以得到完整的中文体验了（才怪，其实基本上的界面都汉化了，但是种种提示帮助可还是纯英文）。&lt;/strong&gt;&lt;img src=&#34;IMG_20240122_120232.jpg&#34; style=&#34;zoom:25%;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;还有一些小问题，前者通过电源键关机要反应好几分钟，两者互刷update包会有字体上的一些问题等&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;不过用来看书也是够了，OI系统通过软件算法实现了动态刷新界面，灰阶也得到了升级。就是比原生系统页面响应快了（也许有那么半秒？），画面更加细腻了。其他的比如阅读界面上UI调整也有很大自由度。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://wiki.mobileread.com/w/images/thumb/4/4a/Oi-fbreader-setup.png/250px-Oi-fbreader-setup.png&#34; alt=&#34;img&#34;&gt;&lt;/p&gt;
+&lt;h1 id=&#34;进阶&#34;&gt;进阶&lt;/h1&gt;
+&lt;p&gt;&lt;strong&gt;可以通过USB数据线RNDIS联网，SSH连接整活？原想删除一些用不到的看看能不能运行更流程。寄了，根本连不上。设备描述符就出错，Windows、Ubuntu都识别不了……可能这设备也太老了吧。&lt;/strong&gt;&lt;/p&gt;
+&lt;h1 id=&#34;使用体验&#34;&gt;使用体验&lt;/h1&gt;
+&lt;p&gt;&lt;strong&gt;作为我上手的第一款电纸书，体验上其实还可以， 屏幕大概5寸，正好适合放入口袋随身（也正因为这个，屏幕给磕了一个小黑点。不过也是原来的保护套都掉皮了丢了……）单手握持也很趁手。去掉屏幕上的保护膜，也能看起来更加通透。皮质外壳部分因为老化有点粘灰，只能用酒精擦干净，用久了还是粘不少毛毛。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;原来系统确实鸡肋，显示效果还是OI后面好点，虽然也有一些残影的问题。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;IMG_20240122_052858.jpg&#34; style=&#34;zoom:15%;&#34; /&gt;&lt;img src=&#34;IMG_20240122_101921.jpg&#34; style=&#34;zoom:15%;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;功能丰富性上提高了不少，看书、图片、益智棋类游戏、音乐录音、俄英词典、看时间都可。不过我这个构建有点问题，有几个版本的可以插耳机听音乐，目前刷的又不行，不过也不用指望音质。系统卡的时候更是鬼畜……&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;刷机完首先需要做的是添加字体（见上面），这个系统后面出现了中文字符缺失的问题，必须自己添加。这个新添加字符到SD卡后，再开机之后它还会加载个半小时，不太清楚为什么。后面就能直接用了。&lt;/strong&gt;&lt;/p&gt;
+&lt;img src=&#34;IMG_20240122_101446.jpg&#34; style=&#34;zoom:25%;&#34; /&gt;
+&lt;p&gt;&lt;strong&gt;但就文字图书阅读，翻页速度基本上是优化了，按键即响应，比原来的快得多。但是滚轮似乎太灵敏了，每次多翻挺烦。而且也有操作太快卡死的问题。残影问题也不多见，正常阅读没有，一般是操作太快或者系统负载大可能会有。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;还有一点，系统自由度挺高，很多设置自己能改。&lt;/strong&gt;&lt;/p&gt;
+&lt;img src=&#34;IMG_20240123_232712.jpg&#34; style=&#34;zoom:25%;&#34; /&gt;
+&lt;p&gt;&lt;strong&gt;这个可以做到四种屏幕旋转，自由度确实不错，可以不用死扣一个键了。&lt;/strong&gt;&lt;/p&gt;
+&lt;img src=&#34;IMG_20240123_234001.jpg&#34; style=&#34;zoom:25%;&#34; /&gt;
+&lt;p&gt;&lt;img src=&#34;IMG_20240122_102910.jpg&#34; style=&#34;zoom:15%;&#34; /&gt;&lt;img src=&#34;IMG_20240122_102916.jpg&#34; style=&#34;zoom:25%;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;屏幕动态刷新算法带来的灰阶升级比较&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;在打开文件方面，测试了几个，基本上常见格式都可以。doc等不行。打开我自制的网文epub，似乎是目录太多了，几百个，会加载好一会，而且一按查看目录就闪退。其他图片比较多的也会卡死。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;原想SSH连接上删去一些不要的模块，看看能不能减轻设备负担，试了多次也不行。&lt;/strong&gt;&lt;/p&gt;
+&lt;h1 id=&#34;多图杀猫&#34;&gt;多图杀猫&lt;/h1&gt;
+&lt;p&gt;折腾的时候拍了不少图，也没什么顺序，就列在下面了。&lt;/p&gt;
+&lt;img src=&#34;IMG_20240122_052629.jpg&#34; style=&#34;zoom:25%;&#34; /&gt;
+&lt;img src=&#34;IMG_20240122_101934.jpg&#34; style=&#34;zoom:25%;&#34; /&gt;
+&lt;img src=&#34;IMG_20240122_102248.jpg&#34; style=&#34;zoom:25%;&#34; /&gt;
+&lt;img src=&#34;IMG_20240122_150607.jpg&#34; style=&#34;zoom: 25%;&#34; /&gt;
+&lt;img src=&#34;IMG_20240122_160432.jpg&#34; style=&#34;zoom:25%;&#34; /&gt;
+&lt;h1 id=&#34;后话&#34;&gt;后话&lt;/h1&gt;
+&lt;p&gt;&lt;strong&gt;在存档的开发文档页面看到后面要转移至OpenWRT去了，因为维护这么一个单独的系统太复杂。可惜后面还是没了。当时还是太小众了些么。用爱发电不易呀。&lt;/strong&gt;&lt;/p&gt;
+&lt;h1 id=&#34;存档部分&#34;&gt;存档部分&lt;/h1&gt;
+&lt;p&gt;&lt;strong&gt;保存一下web archive上的部分信息，免得再去找。&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&#34;supported-file-formats&#34;&gt;Supported file formats&lt;/h2&gt;
+&lt;h3 id=&#34;books&#34;&gt;Books&lt;/h3&gt;
+&lt;h4 id=&#34;main-formats&#34;&gt;Main formats&lt;/h4&gt;
+&lt;p&gt;&lt;strong&gt;Those formats are supported by developers and bugs are fixed ASAP.&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;ePub12&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;FB21&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;HTML, XHTML1&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Plain text&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;RTF&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;PDF3&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;DjVu&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;secondary-formats&#34;&gt;Secondary formats&lt;/h4&gt;
+&lt;p&gt;&lt;strong&gt;The following file formats are supported to a lesser degree. Bugs related to those formats are not prioritized.&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;TCR (compressed text for Psion)&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Plucker&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Open E-Book (OEB)&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;OpenReader&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;ztxt (Weasel)&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Palmdoc (Aportis)&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Mobipocket 2&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;CHM&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;images&#34;&gt;Images&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;png&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;jpeg&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;gif&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;xpm&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;music&#34;&gt;Music&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Only for N516.&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;mp3&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;ogg&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;CSS and tables are not fully supported&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;&lt;strong&gt;Only DRM-free files&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;&lt;strong&gt;Password-protected PDFs are not supported&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;misc&#34;&gt;misc&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;相关网页信息：&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://web.archive.org/web/20130801074259/http://openinkpot.org/wiki/User/Fonts#manual-installation&#34;&gt;User/Fonts – OpenInkpot (archive.org)&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://web.archive.org/web/20131206131307/http://openinkpot.org/roadmap?show=all&#34;&gt;Roadmap – OpenInkpot (archive.org)&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://web.archive.org/web/20121010124556/http://openinkpot.org/ticket/944&#34;&gt;#944 (Chinese UI broken in recent builds (Due to font problem)) – OpenInkpot (archive.org)&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://web.archive.org/web/20131206131431/http://openinkpot.org/wiki/0.2/UsersGuide&#34;&gt;0.2/UsersGuide – OpenInkpot (archive.org)&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://wenku.baidu.com/view/fe81cee95ef7ba0d4a733b1d.html?_wkts_=1705852971685&#34;&gt;汉王电纸书N510刷机到N516 - 百度文库 (baidu.com)&lt;/a&gt; 启发看到OI&lt;/p&gt;
+</content>
+            
+            
+            
+            
+            
+                
+                    
+                
+                    
+                
+            
+        </entry>
+    
+        <entry>
+            <title type="text">记一次红米9root全过程</title>
+            <link rel="alternate" type="text/html" href="http://localhost:1313/tutorials/root/root1/" />
+            <id>http://localhost:1313/tutorials/root/root1/</id>
+            <updated>2022-08-30T12:15:23&#43;08:00</updated>
+            <published>2022-08-30T12:13:15&#43;08:00</published>
+            <author>
+                    <name>Jason</name>
+                    <uri>https://maniac.netlify.app/</uri>
+                    <email>jasonxu5120@outlook.com</email>
+                    </author>
+            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html"></summary>
+            
+                <content type="html"></content>
+            
+            
+            
+            
+            
+                
+                    
+                
+                    
+                
+            
+        </entry>
+    
+        <entry>
+            <title type="text">MD技巧</title>
+            <link rel="alternate" type="text/html" href="http://localhost:1313/tutorials/md-technique/" />
+            <id>http://localhost:1313/tutorials/md-technique/</id>
+            <updated>2022-08-30T12:15:23&#43;08:00</updated>
+            <published>2021-07-31T21:48:32&#43;08:00</published>
+            <author>
+                    <name>Jason</name>
+                    <uri>https://maniac.netlify.app/</uri>
+                    <email>jasonxu5120@outlook.com</email>
+                    </author>
+            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">第X篇博文</summary>
+            
+                <content type="html">&lt;h2 id=&#34;一些写作心得&#34;&gt;一些写作心得？&lt;/h2&gt;
+&lt;p&gt;之前用过一段时间的typora收费了，搞得我头疼的vscode，让我又不得不弃，幸好找到office viewer的扩展，瞬间好用了起来TAT,可以直接粘贴图片，还是相对路径的。&lt;/p&gt;
+&lt;h2 id=&#34;标题&#34;&gt;标题&lt;/h2&gt;
+&lt;p&gt;一级标题&lt;/p&gt;
+&lt;p&gt;========&lt;em&gt;在下&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;二级标题&lt;/p&gt;
+&lt;p&gt;---------&lt;em&gt;在下&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;or&lt;/p&gt;
+&lt;p&gt;# 一级标题&lt;/p&gt;
+&lt;p&gt;###### 六级标题&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;# 假一级标题（看来在这里是作为文章名或者就是大字体也可导航
+## 一级标题
+### 二级标题到六级
+###### 五级标题
+# 假一级标题2
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;俩空格&lt;/p&gt;
+&lt;h2 id=&#34;回车空一行才是换行&#34;&gt;回车空一行才是换行&lt;/h2&gt;
+&lt;p&gt;也可以行结尾多加两个以上空格&lt;/p&gt;
+&lt;h2 id=&#34;斜体&#34;&gt;&lt;em&gt;斜体&lt;/em&gt;:&lt;/h2&gt;
+&lt;p&gt;*斜体*
+_斜体_&lt;/p&gt;
+&lt;h2 id=&#34;粗体&#34;&gt;&lt;strong&gt;粗体&lt;/strong&gt;:&lt;/h2&gt;
+&lt;p&gt;*&lt;em&gt;粗体&lt;/em&gt;*&lt;/p&gt;
+&lt;h2 id=&#34;粗斜体&#34;&gt;&lt;em&gt;&lt;strong&gt;粗斜体&lt;/strong&gt;&lt;/em&gt;&lt;/h2&gt;
+&lt;p&gt;*&lt;strong&gt;粗斜体&lt;/strong&gt;*&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;分割线&#34;&gt;分割线&lt;/h2&gt;
+&lt;p&gt;***&lt;/p&gt;
+&lt;p&gt;* * *&lt;/p&gt;
+&lt;p&gt;******&lt;/p&gt;
+&lt;p&gt;- - -&lt;/p&gt;
+&lt;p&gt;----------&lt;/p&gt;
+&lt;h2 id=&#34;删除线删除线&#34;&gt;&lt;del&gt;删除线&lt;/del&gt;:~~删除线~~&lt;/h2&gt;
+&lt;h2 id=&#34;u下划线-uu下划线u&#34;&gt;&lt;code&gt;&amp;lt;u&amp;gt;&lt;/code&gt;下划线 &lt;code&gt;&amp;lt;/u&amp;gt;&lt;/code&gt;:&amp;lt;u&amp;gt;下划线&amp;lt;/u&amp;gt;&lt;/h2&gt;
+&lt;p&gt;&lt;em&gt;Notice：对错误的忽略挺好&lt;/em&gt;原来下划线右少\也就忽略&lt;/p&gt;
+&lt;h2 id=&#34;脚注&#34;&gt;[^脚注]&lt;/h2&gt;
+&lt;p&gt;创建脚注格式类似这样 &lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;http://localhost:1313/tutorials/md-technique/#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;。&lt;/p&gt;
+&lt;h2 id=&#34;代码块&#34;&gt;代码块&lt;/h2&gt;
+&lt;p&gt;这里好像只能 ```能复制的````函数名（不能复制）`&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;printf()&lt;/code&gt;&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;&amp;lt;?php
+echo &amp;#39;runoob&amp;#39;
+function test(){
+echo &amp;#39;test&amp;#39;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;这是表格加测试配合snipaste&#34;&gt;这是表格加测试配合snipaste&lt;/h2&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;表头&lt;/th&gt;
+&lt;th&gt;表头&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;单元格&lt;/td&gt;
+&lt;td&gt;单元格&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;单元格&lt;/td&gt;
+&lt;td&gt;单元格&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;img src=&#34;image/markdown%E6%8A%80%E5%B7%A7_1661827887080.png&#34; alt=&#34;pic1 pic&#34; title=&#34;插入第一张图，第一次相对路径输入对了还调了好一会才出来……&#34;&gt;
+经比较，能看到比实际截的图要大大概1/4……&lt;/p&gt;
+&lt;p&gt;![pic1 pic](image/markdown技巧_1661827887080.png &amp;quot;插入第一张图，第一次相对路径输入对了还调了好一会才出来……&amp;quot;)&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&#34;text-align:left&#34;&gt;左对齐&lt;/th&gt;
+&lt;th style=&#34;text-align:right&#34;&gt;右对齐&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;居中对齐&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;单元格&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;单元格&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;单元格&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;单元格&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;单元格&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;单元格&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;img src=&#34;image/markdown%E6%8A%80%E5%B7%A7_1661827956797.png&#34; alt=&#34;pic2 pic&#34; title=&#34;本地显示图片有点慢呐，等上传了再看看，下面的网图倒是挺快的&#34;&gt;&lt;/p&gt;
+&lt;p&gt;图片的一起写了吧&lt;/p&gt;
+&lt;p&gt;还有跟那个链接一样的，[pic3][1][1]:网图链接&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Markdown 还没有办法指定图片的高度与宽度，如果你需要的话，你可以使用普通的 &amp;lt;img&amp;gt; 标签
+&amp;lt;img src=&amp;quot;http://static.runoob.com/images/runoob-logo.png&amp;quot; width=&amp;quot;50%&amp;quot;&amp;gt;
+&lt;img src=&#34;http://static.runoob.com/images/runoob-logo.png&#34; width=&#34;50%&#34;&gt;
+hugo官方文档的：不太懂怎么搞的，回头有空看看（主要感觉能用一个就行了
+{{ $image := resources.Get &amp;quot;images/screenshot.png&amp;quot; }}&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;这是一个链接&#34;&gt;这是一个链接&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.runoob.com&#34;&gt;菜鸟教程&lt;/a&gt;[菜鸟教程](&lt;a href=&#34;https://www.runoob.com&#34;&gt;https://www.runoob.com&lt;/a&gt;)
+or&lt;a href=&#34;https://www.runoob.com&#34;&gt;https://www.runoob.com&lt;/a&gt;&amp;lt;https://www.runoob.com&amp;gt;&lt;/p&gt;
+&lt;p&gt;这个链接用 1 作为网址变量 &lt;a href=&#34;http://www.google.com/&#34;&gt;Google&lt;/a&gt;  [Google][1]&lt;/p&gt;
+&lt;p&gt;这个链接用 runoob 作为网址变量 &lt;a href=&#34;http://www.runoob.com/&#34;&gt;Runoob&lt;/a&gt;
+然后在文档的结尾为变量赋值（网址）&lt;/p&gt;
+&lt;p&gt;[1]: &lt;a href=&#34;http://www.google.com/&#34;&gt;http://www.google.com/&lt;/a&gt;
+[runoob]: &lt;a href=&#34;http://www.runoob.com/&#34;&gt;http://www.runoob.com/&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;高级玩法huwlihushao&#34;&gt;高级玩法（huwlihushao&lt;/h2&gt;
+&lt;h1 id=&#34;支持的-html-元素&#34;&gt;支持的 HTML 元素&lt;/h1&gt;
+&lt;p&gt;不在 Markdown 涵盖范围之内的标签，都可以直接在文档里面用 HTML 撰写。&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;目前支持的 HTML 元素有：&amp;lt;kbd&amp;gt; &amp;lt;b&amp;gt; &amp;lt;i&amp;gt; &amp;lt;em&amp;gt; &amp;lt;sup&amp;gt; &amp;lt;sub&amp;gt; &amp;lt;br&amp;gt;等 ，如：
+
+使用 &amp;lt;kbd&amp;gt;Ctrl&amp;lt;/kbd&amp;gt;+&amp;lt;kbd&amp;gt;Alt&amp;lt;/kbd&amp;gt;+&amp;lt;kbd&amp;gt;Del&amp;lt;/kbd&amp;gt; 重启电脑
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;使用 &lt;code&gt;&amp;lt;kbd&amp;gt;&lt;/code&gt;Ctrl &lt;code&gt;&amp;lt;/kbd&amp;gt;&lt;/code&gt;+&lt;code&gt;&amp;lt;kbd&amp;gt;&lt;/code&gt;Alt &lt;code&gt;&amp;lt;/kbd&amp;gt;&lt;/code&gt;+&lt;code&gt;&amp;lt;kbd&amp;gt;&lt;/code&gt;Del &lt;code&gt;&amp;lt;/kbd&amp;gt;&lt;/code&gt; 重启电脑,再俺这没啥效果，不用（也记不住咳咳&lt;/p&gt;
+&lt;h1 id=&#34;转义-&#34;&gt;转义 \&lt;/h1&gt;
+&lt;p&gt;Markdown 支持以下这些符号前面加上反斜杠来帮助插入普通的符号：&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;\   反斜线
+`   反引号
+*   星号
+_   下划线
+{}  花括号
+[]  方括号
+()  小括号
+#   井字号
++   加号
+-   减号
+.   英文句点
+!   感叹号
+&lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&#34;数学公式httpsio-oimetechdocumentation-of-hugo-theme-memekatexmathjaxmermaid应该不用吧&#34;&gt;&lt;a href=&#34;https://io-oi.me/tech/documentation-of-hugo-theme-meme/#katexmathjaxmermaid&#34;&gt;数学公式&lt;/a&gt;（应该不用吧……&lt;/h1&gt;
+&lt;h1 id=&#34;hugo官方的diagramshttpsgohugoiocontent-managementdiagramsgoat-diagrams-ascii&#34;&gt;Hugo官方的&lt;a href=&#34;https://gohugo.io/content-management/diagrams/#goat-diagrams-ascii&#34;&gt;Diagrams&lt;/a&gt;&lt;/h1&gt;
+&lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34;&gt;
+&lt;p&gt;菜鸟教程 -- 学的不仅是技术，更是梦想！！！&amp;#160;&lt;a href=&#34;http://localhost:1313/tutorials/md-technique/#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+</content>
+            
+            
+            
+            
+            
+                
+                    
+                
+                    
+                
+            
+        </entry>
+    
+        <entry>
+            <title type="text">一份使用手册（CV战士用</title>
+            <link rel="alternate" type="text/html" href="http://localhost:1313/tutorials/fm/fm/" />
+            <id>http://localhost:1313/tutorials/fm/fm/</id>
+            <updated>2022-08-30T12:15:23&#43;08:00</updated>
+            <published>0001-01-01T00:00:00&#43;00:00</published>
+            <author>
+                    <name>Jason</name>
+                    <uri>https://maniac.netlify.app/</uri>
+                    <email>jasonxu5120@outlook.com</email>
+                    </author>
+            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">记录自己不理解的内容、格式。</summary>
+            
+                <content type="html">&lt;h2 id=&#34;front-matter&#34;&gt;front-matter&lt;/h2&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Name&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;th&gt;Notes&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;title&lt;/td&gt;
+&lt;td&gt;*&lt;/td&gt;
+&lt;td&gt;string&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;linkTitle&lt;/td&gt;
+&lt;td&gt;*&lt;/td&gt;
+&lt;td&gt;string&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;subtitle&lt;/td&gt;
+&lt;td&gt;displayed below the title&lt;/td&gt;
+&lt;td&gt;string, Markdown supported&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;date&lt;/td&gt;
+&lt;td&gt;*&lt;/td&gt;
+&lt;td&gt;string&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;lastmod&lt;/td&gt;
+&lt;td&gt;*&lt;/td&gt;
+&lt;td&gt;string&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;publishDate发布时间（--buildFuture）&lt;/td&gt;
+&lt;td&gt;*&lt;/td&gt;
+&lt;td&gt;string&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;expiryDate//过期时间（--buildExpired）&lt;/td&gt;
+&lt;td&gt;*&lt;/td&gt;
+&lt;td&gt;string&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;taxonomies&gt; eg: categories, tags, series&lt;/td&gt;
+&lt;td&gt;*&lt;/td&gt;
+&lt;td&gt;array&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;description&lt;/td&gt;
+&lt;td&gt;*&lt;/td&gt;
+&lt;td&gt;string, Markdown supported&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;summary&lt;/td&gt;
+&lt;td&gt;*&lt;/td&gt;
+&lt;td&gt;string, Markdown supported&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;images&lt;/td&gt;
+&lt;td&gt;*&lt;/td&gt;
+&lt;td&gt;array&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;slug&lt;/td&gt;
+&lt;td&gt;*&lt;/td&gt;
+&lt;td&gt;string&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;url&lt;/td&gt;
+&lt;td&gt;*&lt;/td&gt;
+&lt;td&gt;string&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;draft草稿（--buildDrafts|-D可见）&lt;/td&gt;
+&lt;td&gt;*&lt;/td&gt;
+&lt;td&gt;boolean&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;isCJKLanguage&lt;/td&gt;
+&lt;td&gt;*&lt;/td&gt;
+&lt;td&gt;boolean&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;weight&lt;/td&gt;
+&lt;td&gt;*&lt;/td&gt;
+&lt;td&gt;integer&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;type&lt;/td&gt;
+&lt;td&gt;*&lt;/td&gt;
+&lt;td&gt;string, if equal to &amp;quot;poetry&amp;quot;, will use a special layout for it&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;layout&lt;/td&gt;
+&lt;td&gt;*&lt;/td&gt;
+&lt;td&gt;string&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;outputs&lt;/td&gt;
+&lt;td&gt;*&lt;/td&gt;
+&lt;td&gt;array&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;aliases&lt;/td&gt;
+&lt;td&gt;*&lt;/td&gt;
+&lt;td&gt;array&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;markup&lt;/td&gt;
+&lt;td&gt;*&lt;/td&gt;
+&lt;td&gt;string&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;meta&lt;/td&gt;
+&lt;td&gt;set false to disable post-meta&lt;/td&gt;
+&lt;td&gt;boolean&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;toc&lt;/td&gt;
+&lt;td&gt;display TOC&lt;/td&gt;
+&lt;td&gt;boolean, override enableTOC in config.toml&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;tocNum&lt;/td&gt;
+&lt;td&gt;display TOC number&lt;/td&gt;
+&lt;td&gt;boolean, override displayTOCNum in config.toml&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;anchor&lt;/td&gt;
+&lt;td&gt;enable headings anchor&lt;/td&gt;
+&lt;td&gt;boolean, override enableHeadingsAnchor in config.toml&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;displayCopyright&lt;/td&gt;
+&lt;td&gt;display post-copyright&lt;/td&gt;
+&lt;td&gt;boolean, override displayPostCopyright in config.toml&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;badge&lt;/td&gt;
+&lt;td&gt;display updated-badge&lt;/td&gt;
+&lt;td&gt;boolean, override displayUpdatedBadge in config.toml&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;gitinfo&lt;/td&gt;
+&lt;td&gt;display post-gitinfo&lt;/td&gt;
+&lt;td&gt;boolean, override displayPostGitInfo in config.toml&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;share&lt;/td&gt;
+&lt;td&gt;display post-share&lt;/td&gt;
+&lt;td&gt;boolean, override displayPostShare in config.toml&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;related&lt;/td&gt;
+&lt;td&gt;display related-posts&lt;/td&gt;
+&lt;td&gt;boolean, override displayRelatedPosts in config.toml&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;katex&lt;/td&gt;
+&lt;td&gt;add KaTeX support&lt;/td&gt;
+&lt;td&gt;boolean, override enableKaTeX in config.toml&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;mathjax&lt;/td&gt;
+&lt;td&gt;add MathJax support&lt;/td&gt;
+&lt;td&gt;boolean, override enableMathJax in config.toml&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;mermaid&lt;/td&gt;
+&lt;td&gt;add Mermaid support&lt;/td&gt;
+&lt;td&gt;boolean, override enableMermaid in config.toml&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;comments&lt;/td&gt;
+&lt;td&gt;set false to disable comments in mainSections or set true to enable comments in non-mainSections&lt;/td&gt;
+&lt;td&gt;boolean&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;smallCaps&lt;/td&gt;
+&lt;td&gt;small caps?&lt;/td&gt;
+&lt;td&gt;boolean, override enableSmallCaps in config.toml&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;dropCap&lt;/td&gt;
+&lt;td&gt;drop cap?&lt;/td&gt;
+&lt;td&gt;boolean, override enableDropCap in config.toml&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;dropCapAfterHr&lt;/td&gt;
+&lt;td&gt;drop cap after every horizontal rule tag?&lt;/td&gt;
+&lt;td&gt;boolean, override enableDropCapAfterHr in config.toml&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;deleteHrBeforeDropCap&lt;/td&gt;
+&lt;td&gt;delete horizontal rule tag before drop cap?&lt;/td&gt;
+&lt;td&gt;boolean, override deleteHrBeforeDropCap in config.toml&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;indent&lt;/td&gt;
+&lt;td&gt;indent instead of margin?&lt;/td&gt;
+&lt;td&gt;boolean, override paragraphStyle in config.toml&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;indentFirstParagraph&lt;/td&gt;
+&lt;td&gt;indent the first paragraph?&lt;/td&gt;
+&lt;td&gt;boolean, override indentFirstParagraph in config.toml&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;align&lt;/td&gt;
+&lt;td&gt;normal, justify, center&lt;/td&gt;
+&lt;td&gt;string, if equal to &amp;quot;normal&amp;quot;, will override enableJustify in config.toml&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;original&lt;/td&gt;
+&lt;td&gt;original? You can add the following 8 terms if you set false. The author is required, other optional&lt;/td&gt;
+&lt;td&gt;boolean, override original in config.toml&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;author&lt;/td&gt;
+&lt;td&gt;author of original post&lt;/td&gt;
+&lt;td&gt;string&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;link&lt;/td&gt;
+&lt;td&gt;link of original post&lt;/td&gt;
+&lt;td&gt;string, URL&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;copyright&lt;/td&gt;
+&lt;td&gt;license of the post&lt;/td&gt;
+&lt;td&gt;string, Markdown supported&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;website&lt;/td&gt;
+&lt;td&gt;author’s website&lt;/td&gt;
+&lt;td&gt;string&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;email&lt;/td&gt;
+&lt;td&gt;author’s email&lt;/td&gt;
+&lt;td&gt;string&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;motto&lt;/td&gt;
+&lt;td&gt;author’s description&lt;/td&gt;
+&lt;td&gt;string&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;avatar&lt;/td&gt;
+&lt;td&gt;author’s avatar&lt;/td&gt;
+&lt;td&gt;string, URL&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;twitter&lt;/td&gt;
+&lt;td&gt;author’s twitter id&lt;/td&gt;
+&lt;td&gt;string&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;disqus_url&lt;/td&gt;
+&lt;td&gt;*&lt;/td&gt;
+&lt;td&gt;string, if not set, will use Permalink as default&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;disqus_identifier&lt;/td&gt;
+&lt;td&gt;*&lt;/td&gt;
+&lt;td&gt;string, if not set, will use RelPermalink as default&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;disqus_title&lt;/td&gt;
+&lt;td&gt;*&lt;/td&gt;
+&lt;td&gt;string, if not set, will use Title as default&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&#34;热重载支持部分关hugo-server---watchfalse&#34;&gt;热重载支持部分（关hugo server --watch=false)&lt;/h2&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;/static/*
+/content/*
+/data/*
+/i18n/*
+/layouts/*
+/themes/&amp;lt;CURRENT-THEME&amp;gt;/*
+config
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Hugo 在模板中关闭 &lt;/body &gt; 之前注入 LiveRelload &amp;lt; script &amp;gt; ，因此，如果没有这个标记，就不能工作。（鸡饭&lt;/p&gt;
+&lt;h2 id=&#34;heading&#34;&gt;&lt;/h2&gt;
+&lt;p&gt;待续&lt;/p&gt;
+</content>
+            
+            
+            
+            
+            
+                
+                    
+                
+                    
+                
+            
+        </entry>
+    
+</feed>

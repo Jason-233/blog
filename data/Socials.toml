@@ -1,0 +1,41 @@
+[[socials]]
+    id = "rss"
+    url = "/rss.xml"
+    icon = "rss"
+    title = "RSS"
+    weight = 1
+
+[[socials]]
+    id = "email"
+    url = "mailto:jasonxu5120@outlook.com"
+    icon = "envelope"
+    title = "Email"
+    weight = 2
+
+[[socials]]
+    id = "github"
+    url = "https://github.com/Jason-233"
+    icon = "github"
+    title = "GitHub"
+    weight = 3
+
+[[socials]]
+    id = "linkedin"
+    url = "https://www.linkedin.com/in/%E5%9F%8E%E8%8D%A3-%E8%AE%B8-b7256528a/"
+    icon = "linkedin"
+    title = "Linkedin"
+    weight = 4
+
+# [[socials]]
+#     id = "twitter"
+#     url = "https://twitter.com/reuixiy"
+#     icon = "twitter"
+#     title = "Twitter"
+#     weight = 4
+
+# [[socials]]
+#     id = "telegram"
+#     url = "https://t.me/yixiuer"
+#     icon = "telegram"
+#     title = "Telegram"
+#     weight = 5
