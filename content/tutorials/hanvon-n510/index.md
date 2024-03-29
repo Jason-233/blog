@@ -1,6 +1,6 @@
 ---
 title: "汉王N510刷入OpenInkpot系统"
-date: 2024-03-21T13:47:40+08:00
+date: 2024-01-22T13:47:40+08:00
 lastmod: ":fileModTime"
 draft: false
 ---
